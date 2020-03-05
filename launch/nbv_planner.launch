@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="record" default="0" />
+  
+  <arg name="debug" default="0" />              <!-- 0: use default rospy.INFO or 1: use debug mode rospy.DEBUG -->
+  <arg name="target_distance" default="1.6" />
+  <arg name="robot_sensor" default="0" />       <!-- 0: use /cmd_vel data or 1: use /pose data -->
+  <arg name="scan_sensor" default="0" />        <!-- 0: use /scan data or 1: use /depthimage_to_laserscan data -->
+  <arg name="rgbd_compressed" default="1" />    <!-- 0: use image_raw or 1: republish compressed images -->
+
+
+  <!-- start next best view planner -->
+  <node pkg="nbv_underwater" name="rough_nbv_planner" type="rough_nbv_planner.py" output="screen" />
+
+  <!-- record ROS topics -->
+  <group if="$(arg record)">
+    <include file="$(find nbv_underwater)/launch/logger.launch" />
+  </group>
+
+</launch>

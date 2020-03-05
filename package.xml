@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>nbv_underwater</name>
+  <version>2.2.3</version>
+  <description>
+    Online Next-Best-View Planner for Low-Cost Underwater Robots
+  </description>
+
+  <maintainer email="monika.roznere.gr@dartmouth.edu">Monika Roznere</maintainer>
+  <author email="monika.roznere.gr@dartmouth.edu">Monika Roznere</author>
+  <license>To Do</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>rospy</build_depend>
+  <build_depend>ORB_SLAM2</build_depend>
+
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>ORB_SLAM2</build_export_depend>
+
+  <exec_depend>ORB_SLAM2</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>mavros_msgs</exec_depend>
+</package>
